@@ -23,3 +23,16 @@ plantControl(1);
 plantControl(2);
 plantControl(3);
 
+// Part 2: Thinking Bigger
+function calcAreaNeeded(weeks) {
+    let plantCount = 100;
+    for (let week=1; week <= weeks; week++){
+        plantCount *= 2;
+    }
+    let areaNeeded = plantCount * 0.8;
+    return areaNeeded
+}
+weeksWOPruning = 10;
+let areaNeeded = calcAreaNeeded(weeksWOPruning);
+let radiusAreaNeeded = Math.sqrt(areaNeeded/PI);
+console.log(`The radius of this expanded garden is ${radiusAreaNeeded.toFixed(2)} meters.`);
