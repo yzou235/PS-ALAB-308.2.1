@@ -36,3 +36,12 @@ weeksWOPruning = 10;
 let areaNeeded = calcAreaNeeded(weeksWOPruning);
 let radiusAreaNeeded = Math.sqrt(areaNeeded/PI);
 console.log(`The radius of this expanded garden is ${radiusAreaNeeded.toFixed(2)} meters.`);
+
+// Part 3: Errors in Judgement
+try {
+    if (areaNeeded > totalArea) {
+        throw new Error(`Not enough space. You need to expand the garden. The new radius is ${radiusAreaNeeded.toFixed(2)}.`);
+    }
+} catch (error) {
+    console.error(error.message);
+}
